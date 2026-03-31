@@ -33,7 +33,7 @@ while (!jogadorAcertou) // ! valor de negação
         Console.Write(letrasCorretas[contadorLetras]);
     }
 
-    Console.Write("\nDigite uma letra: ");
+    Console.Write("\n\nDigite uma letra: ");
     //recebendo e guardando o caractere na variavel
     char chute = Convert.ToChar(Console.ReadLine());
 
@@ -48,4 +48,17 @@ while (!jogadorAcertou) // ! valor de negação
         }
     }
 
+    // mudando a condição de vitoria
+    string letrasCorretasCompletas = string.Join("", letrasCorretas);
+
+    if (palavraSecreta == letrasCorretasCompletas)
+    {
+        jogadorAcertou = true;
+        Console.WriteLine("Parabéns, você acertou a palavra!");
+        Console.WriteLine($"A palavra era {palavraSecreta}");
+    }
+
 }
+
+Console.WriteLine("\nClique ENTER para sair...");
+Console.ReadLine();
